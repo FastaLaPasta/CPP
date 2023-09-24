@@ -1,0 +1,21 @@
+NAME = bsp
+HEADER = Fixed.hpp Point.hpp
+CXX = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp Fixed.cpp Point.cpp BSP.cpp
+OBJS = ${SRCS:%.cpp=%.o}
+
+all : ${NAME}
+
+${NAME} : ${OBJS}
+	${CXX} ${CPPFLAGS} -o ${NAME} ${OBJS}
+
+clean:
+	rm -rf ${OBJS}
+
+fclean: clean
+	rm -rf ${NAME}
+
+re: fclean all
+
+.PHONY: all clean fclean re
