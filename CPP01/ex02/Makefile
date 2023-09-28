@@ -1,6 +1,6 @@
 NAME = hi_here_is_the_brain
 CXX = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 SRCS = main.cpp
 OBJS = ${SRCS:%.cpp=%.o}
 

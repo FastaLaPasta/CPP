@@ -24,28 +24,28 @@ void    PhoneBook::search(){
     for (int i = 0; i < PhoneBook::nbr_of_contacts; i++)
     {
         std::cout << std::setfill(' ') << std::setw(10);
-        std::cout << PhoneBook::contacts[i].contact_nbr;
+        std::cout << PhoneBook::contacts[i].getContactNumber();
         std::cout << "|";
         std::cout << std::setfill(' ') << std::setw(10);
-        std::cout << PhoneBook::adjust(PhoneBook::contacts[i].first_name);
+        std::cout << PhoneBook::adjust(PhoneBook::contacts[i].getFirstName());
         std::cout << "|";
         std::cout << std::setfill(' ') << std::setw(10);
-        std::cout << PhoneBook::adjust(PhoneBook::contacts[i].last_name);
+        std::cout << PhoneBook::adjust(PhoneBook::contacts[i].getLastName());
         std::cout << "|";
         std::cout << std::setfill(' ') << std::setw(10);
-        std::cout << PhoneBook::adjust(PhoneBook::contacts[i].nickname);
+        std::cout << PhoneBook::adjust(PhoneBook::contacts[i].getNickname());
         std::cout << std::endl;
         
     }
     int num;
     std::cout << "\x1b[32mContact num\x1b[0m: "; std::cin >> num;
     num--;
-    if (num >= 0 && num <= 7 && PhoneBook::contacts[num].first_name.size() > 0){
-        std::cout << "\x1b[32mNumber\x1b[0m: " << PhoneBook::contacts[num].number << std::endl;
-        std::cout << "\x1b[32mFirst Name\x1b[0m: " << PhoneBook::contacts[num].first_name << std::endl;
-        std::cout << "\x1b[32mLast Name\x1b[0m: " << PhoneBook::contacts[num].last_name << std::endl;
-        std::cout << "\x1b[32mNickname\x1b[0m: " << PhoneBook::contacts[num].nickname << std::endl;
-        std::cout << "\x1b[32mDarkest Secret\x1b[0m: " << PhoneBook::contacts[num].darkest_s << std::endl;  
+    if (num >= 0 && num <= 7 && PhoneBook::contacts[num].getFirstName().size() > 0){
+        std::cout << "\x1b[32mNumber\x1b[0m: " << PhoneBook::contacts[num].getNumber() << std::endl;
+        std::cout << "\x1b[32mFirst Name\x1b[0m: " << PhoneBook::contacts[num].getFirstName() << std::endl;
+        std::cout << "\x1b[32mLast Name\x1b[0m: " << PhoneBook::contacts[num].getLastName() << std::endl;
+        std::cout << "\x1b[32mNickname\x1b[0m: " << PhoneBook::contacts[num].getNickname() << std::endl;
+        std::cout << "\x1b[32mDarkest Secret\x1b[0m: " << PhoneBook::contacts[num].getDarkest() << std::endl;  
     }
     else {
         std::cout << "\x1b[31m";

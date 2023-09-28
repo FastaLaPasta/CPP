@@ -10,11 +10,11 @@ class Fixed {
     Fixed( const int nbr );
     Fixed( const float nbr);
 
-    Fixed&              operator=( Fixed const & src );
+    Fixed&        operator=( Fixed const & src );
     
 
-    int                 getRawBits( void ) const;
-    void                setRawBits( const int raw );
+    int           getRawBits( void ) const;
+    void          setRawBits( const int raw );
     float         toFloat( void ) const;
     int           toInt( void ) const;
 
