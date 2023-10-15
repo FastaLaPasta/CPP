@@ -1,16 +1,14 @@
-NAME = specific
-HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongCat.hpp WrongAnimal.hpp
+NAME = final_mother_furer_fantasy
+HEADER = AMateria.hpp Character.hpp ICharacter.hpp Cure.hpp Ice.hpp
 CXX = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp
 OBJS = ${SRCS:%.cpp=%.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${CXX} ${CPPFLAGS} -o ${NAME} ${OBJS}
-
-%.o: %.cpp ${HEADERS}
 
 clean:
 	rm -rf ${OBJS}
