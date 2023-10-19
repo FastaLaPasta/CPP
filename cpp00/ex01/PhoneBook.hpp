@@ -6,11 +6,9 @@
 #include "Contact.hpp"
 
 class PhoneBook{
-    public:
+public:
 
-    //Atribus
-    Contact contacts[8];
-    int     nbr_of_contacts;
+    
 
     //Methodes
     void add_contact(int nbr);
@@ -20,6 +18,11 @@ class PhoneBook{
     //Constructeur\destructeur
     PhoneBook();
     ~PhoneBook();
+
+private:
+    //Atribus
+    Contact contacts[8];
+    int     nbr_of_contacts;
 };
 
 #endif

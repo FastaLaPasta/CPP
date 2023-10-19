@@ -9,10 +9,10 @@ SedV2::~SedV2() {
 }
 
 void    SedV2::replace(std::string find, std::string replace) {
-    std::ifstream   ifs(this->_infile);
+    std::ifstream   ifs(this->_infile.c_str());
 
     if (ifs.is_open()) {
-        std::ofstream   ofs(this->_outfile);
+        std::ofstream   ofs(this->_outfile.c_str());
         std::string     tmp;
         while (std::getline(ifs, tmp)) {
             size_t found = tmp.find(find);

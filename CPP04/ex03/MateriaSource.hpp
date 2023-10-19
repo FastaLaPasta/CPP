@@ -3,12 +3,15 @@
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource {
-    MateriaSource();
-    MateriaSource(const MateriaSource& src);
-    MateriaSource&  operator=(const MateriaSource& src);
-    ~MateriaSource();
-    virtual void        learnMateria(AMateria*);
-    virtual AMateria*   createMateria(std::string const& type);
+    public:
+        MateriaSource();
+        MateriaSource(const MateriaSource& src);
+        MateriaSource&  operator=(const MateriaSource& src);
+        ~MateriaSource();
+        virtual void        learnMateria(AMateria* src);
+        virtual AMateria*   createMateria(std::string const& type);
+    private:
+        AMateria* _inventory[4];
 };
 
 #endif

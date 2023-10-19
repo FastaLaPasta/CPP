@@ -34,7 +34,6 @@ void    Harl::error() {
     std::cout << "[ ERROR ]" << std::endl;
     std::cout << "This is unacceptable !" << std::endl 
             << "I want to speak to the manager now." << std::endl;
-    std::cout << std::endl;
 }
 
 void    Harl::complain(std::string level) {
