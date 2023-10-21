@@ -1,4 +1,5 @@
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure() {
     this->type = "cure";
@@ -10,6 +11,7 @@ Cure::Cure(const Cure& src) {
 
 Cure&   Cure::operator=(const Cure& src) {
     this->type = src.type;
+    return (*this);
 }
 
 Cure::~Cure() {

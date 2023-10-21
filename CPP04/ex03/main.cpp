@@ -1,5 +1,7 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
@@ -16,13 +18,18 @@ int main()
     me->equip(tmp);
 
     ICharacter* bob = new Character("bob");
+    ICharacter* patric = new Character("patric");
 
     me->use(0, *bob);
     me->use(1, *bob);
 
+    // *((Character*)bob) = *((Character*)me);
+    // bob->use(0, *patric);
+
     delete bob;
     delete me;
     delete src;
+    delete patric;
 
     return 0;
 }

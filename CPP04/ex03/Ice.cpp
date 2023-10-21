@@ -1,4 +1,5 @@
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
 Ice::Ice() {
     this->type = "ice";
@@ -10,6 +11,7 @@ Ice::Ice(const Ice& src) {
 
 Ice&   Ice::operator=(const Ice& src) {
     this->type = src.type;
+    return (*this);
 }
 
 Ice::~Ice() {
@@ -17,7 +19,7 @@ Ice::~Ice() {
 }
 
 void    Ice::use(ICharacter& target) {
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 AMateria*   Ice::clone() const{

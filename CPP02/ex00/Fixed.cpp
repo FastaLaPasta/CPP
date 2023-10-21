@@ -15,6 +15,7 @@ Fixed::~Fixed() {
 }
 
 Fixed&  Fixed::operator=( const Fixed& src ) {
+    std::cout << "copy assignement operator called" << std::endl;
     this->_fixed_point = src.getRawBits();
     return *this;
 }

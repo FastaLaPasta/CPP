@@ -6,7 +6,7 @@ int main() {
     Point c(1.0f, 2.0f);
     Point point(10.0f, 1.0f);
 
-    bool isInside = bsp(a, b, c, point);
+    bool isInside = bsp(a, b, c, a);
 
     if (isInside) {
         std::cout << "Le point est à l'intérieur du triangle." << std::endl;

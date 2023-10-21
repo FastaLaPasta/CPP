@@ -1,8 +1,8 @@
 NAME = final_mother_furer_fantasy
-HEADER = AMateria.hpp Character.hpp ICharacter.hpp Cure.hpp Ice.hpp
+HEADER = AMateria.hpp Character.hpp ICharacter.hpp Cure.hpp Ice.hpp MateriaSource.hpp IMateriaSource.hpp
 CXX = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS = ${SRCS:%.cpp=%.o}
 
 all: ${NAME}

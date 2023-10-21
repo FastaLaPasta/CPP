@@ -1,7 +1,6 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 #include <iostream>
-#include "Character.hpp"
 
 class ICharacter;
 
@@ -12,7 +11,7 @@ class AMateria {
         AMateria();
         AMateria(const AMateria& src);
         AMateria(std::string const& type);
-        ~AMateria();
+        virtual ~AMateria();
         AMateria&   operator=(const AMateria & src);
         std::string const& getType() const; //Returns the materia type
         virtual AMateria* clone() const = 0;
