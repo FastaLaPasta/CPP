@@ -9,7 +9,7 @@ class Bureaucrat {
         Bureaucrat(std::string const name, int grade);
         Bureaucrat(const Bureaucrat& src);
         Bureaucrat& operator=(const Bureaucrat& src);
-        std::ostream& operator<<(std::ostream &output, Bureaucrat const& src);
+        
         ~Bureaucrat();
 
         std::string getName() const;
@@ -27,5 +27,7 @@ class Bureaucrat {
         std::string const   name;
         int grade;
 };
+
+std::ostream& operator<<(std::ostream &output, Bureaucrat const& src);
 
 #endif
