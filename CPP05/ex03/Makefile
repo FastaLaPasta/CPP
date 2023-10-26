@@ -1,9 +1,9 @@
-NAME = 28B
+NAME = Intern
 HEADERS = Bureaucrat.hpp AForm.hpp
 CXX = c++
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp Intern.cpp
 OBJS = ${SRCS:%.cpp=%.o}
 
 all: ${NAME}
