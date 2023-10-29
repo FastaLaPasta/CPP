@@ -2,9 +2,12 @@
 #include <cctype>
 #include <cstdlib>
 #include <sstream>
+#include <iomanip>
 #include <limits>
 
 void    ScalarConverter::convert(std::string input) {
+    std::cout.precision(1);
+    std::cout << std::fixed;
     try {
         char conv = ScalarConverter::charConvert(input);
         std::cout << conv << std::endl;
@@ -55,7 +58,7 @@ char    ScalarConverter::charConvert(const std::string& input) {
 int ScalarConverter::intConvert(const std::string& input) {
     double conv = (atof(input.c_str()));
 
-    if (atof(input.c_str()) && conv <= std::numeric_limits<int>::max() && conv >= std::numeric_limits<int>::min()) {
+    if ((atof(input.c_str()) && conv <= std::numeric_limits<int>::max() && conv >= std::numeric_limits<int>::min()) || input[0] == '0') {
         return (static_cast<int>(conv));
     } else if (input.length() < 2) {
         return (static_cast<int>(input[0]));
@@ -67,7 +70,7 @@ int ScalarConverter::intConvert(const std::string& input) {
 float   ScalarConverter::floatConvert(const std::string& input) {
     float conv = (atof(input.c_str()));
 
-    if (atof(input.c_str())) {
+    if (atof(input.c_str()) || input[0] == '0') {
         return (static_cast<float>(conv));
     } else if (input == "nan" || input == "nanf") {
         return (std::numeric_limits<float>::quiet_NaN());
@@ -83,7 +86,7 @@ float   ScalarConverter::floatConvert(const std::string& input) {
 double ScalarConverter::doubleConvert(const std::string& input) {
     long double conv = (atof(input.c_str()));
 
-    if (atof(input.c_str())) {
+    if (atof(input.c_str()) || input[0] == '0') {
         return (static_cast<double>(conv));
     } else if (input == "nan" || input == "nanf") {
         return (std::numeric_limits<double>::quiet_NaN());

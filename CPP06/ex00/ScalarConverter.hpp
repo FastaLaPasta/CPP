@@ -9,6 +9,8 @@ class ScalarConverter {
         static float       floatConvert(const std::string& input);
         static double      doubleConvert(const std::string& input);
         static void         convert(std::string input);
+    private:
+        ScalarConverter();
 };
 
 #endif
