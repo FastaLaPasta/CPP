@@ -11,7 +11,6 @@ public:
     DiamondTrap( const DiamondTrap & src );
 
     DiamondTrap&    operator=( const DiamondTrap & src);
-
     void            whoAmI( void ) const;
 private:
     std::string _name;

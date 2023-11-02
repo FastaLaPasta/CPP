@@ -22,6 +22,8 @@ int main()
 
     me->use(0, *bob);
     me->use(1, *bob);
+    // me->unequip(1);
+    // delete tmp;
 
     // *((Character*)bob) = *((Character*)me);
     // bob->use(0, *patric);

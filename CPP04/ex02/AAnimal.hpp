@@ -1,10 +1,10 @@
-#ifndef Animal_HPP
-#define Animal_HPP
+#ifndef AAnimal_HPP
+#define AAnimal_HPP
 #include <iostream>
 
 class AAnimal {
 public:
-    AAnimal();
+
     virtual ~AAnimal();
     AAnimal( std::string child);
     AAnimal( const AAnimal & src );
@@ -14,6 +14,7 @@ public:
     std::string getType( void ) const;
 
 protected:
+    AAnimal(); 
     std::string type;
 };
 

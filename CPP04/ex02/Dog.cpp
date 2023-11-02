@@ -18,7 +18,8 @@ Dog::~Dog() {
 }
 
 Dog& Dog::operator=( const Dog & src ) {
-    this->_dogBrain = src._dogBrain;
+    Brain *brain = new Brain();
+    this->_dogBrain = brain;
     this->type = src.type;
     return (*this);
 }

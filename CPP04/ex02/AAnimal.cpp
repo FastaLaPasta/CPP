@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*---------------------Constructors/Destructor---------------------*/
 
@@ -23,12 +23,6 @@ AAnimal::~AAnimal() {
 AAnimal& AAnimal::operator=( const AAnimal & src ) {
     this->type = src.type;
     return (*this);
-}
-
-/*---------------------Action function---------------------*/
-
-void    AAnimal::makeSound( void ) const {
-    std::cout << "Grrrrr....." << std::endl;
 }
 
 /*---------------------Utils function---------------------*/

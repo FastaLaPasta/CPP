@@ -13,6 +13,7 @@ int main( void )
     std::cout << "J Type: " << j->getType() << " " << std::endl;
     std::cout << "I Type: " << i->getType() << " " << std::endl;
     i->makeSound();
+    j->makeSound();
     meta->makeSound();
 
     delete  meta;

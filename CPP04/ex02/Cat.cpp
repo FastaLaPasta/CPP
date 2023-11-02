@@ -18,7 +18,8 @@ Cat::~Cat() {
 }
 
 Cat& Cat::operator=( const Cat & src ) {
-    this->_catBrain = src._catBrain;
+    Brain *brain = new Brain();
+    this->_catBrain = brain;
     this->type = src.type;
     return (*this);
 }
