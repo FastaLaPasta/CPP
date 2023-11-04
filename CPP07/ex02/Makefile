@@ -1,6 +1,6 @@
 NAME = array
 CXX = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 SRCS = main.cpp
 OBJS = ${SRCS:%.cpp=%.o}
 
