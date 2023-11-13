@@ -38,6 +38,6 @@ T&   Array<T>::operator[](unsigned int idx) const {
 }
 
 template<typename T>
-unsigned int    Array<T>::size() const {
+    unsigned int    Array<T>::size() const {
     return (this->lenght);
 }

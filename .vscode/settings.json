@@ -76,7 +76,9 @@
     "random": "cpp",
     "utility": "cpp",
     "numbers": "cpp",
-    "*.tpp": "cpp"
+    "*.tpp": "cpp",
+    "list": "cpp",
+    "set": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
