@@ -19,8 +19,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/local-home/sboulogn/Desktop/cpp/CPP04/ex03",
-      "program": "/local-home/sboulogn/Desktop/cpp/CPP04/ex03/build/Debug/outDebug",
+      "cwd": "/local-home/sboulogn/Desktop/cppp/CPP08/ex01",
+      "program": "/local-home/sboulogn/Desktop/cppp/CPP08/ex01/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

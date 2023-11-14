@@ -1,5 +1,6 @@
 #include "Span.hpp"
 #include <limits>
+#include <iterator>
 
 Span::Span(unsigned int N) {
     // if (N <= std::numeric_limits<unsigned int>::max()) {
@@ -40,12 +41,19 @@ int Span::longestSpan() {
 }
 
 int Span::shortestSpan() {
-    int shortest = 2146473647;
-    int tmp;
-    for (std::multiset<int>::iterator it = this->tab.begin(); it != this->tab.end(); it++) {
-        tmp = *it;
-        if (*(it + 1) - *it < shortest)
-        shortest = (*it + 1) - *it < shortest;
+    if (tab.size() < 2) {
+        throw std::logic_error("Span to short");
     }
-    return (tmp);
+
+    int shortest = std::numeric_limits<int>::max();
+    std::multiset<int>::iterator it = tab.begin();
+    int current = *it;
+
+    while (++it != tab.end()) {
+        if (*it - current < shortest) {
+            shortest = *it - current;
+        }
+        current = *it;
+    }
+    return (shortest);
 }
