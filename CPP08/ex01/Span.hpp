@@ -1,6 +1,7 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 #include <iostream>
+#include <list>
 #include <set>
 
 class Span {
@@ -13,6 +14,14 @@ class Span {
         void    addNumber(int num);
         int     shortestSpan();
         int     longestSpan();
+
+        template <typename Container>
+        void addRange(const Container& container) {
+            for (typename Container::const_iterator it = container.begin(); it != container.end(); ++it) {
+                addNumber(*it);
+            }
+        }
+
     private:
         Span();
         unsigned int        idx;
