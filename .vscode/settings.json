@@ -78,7 +78,8 @@
     "numbers": "cpp",
     "*.tpp": "cpp",
     "list": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "map": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
