@@ -19,6 +19,7 @@ std::map<std::string, double>   dataProcess() {
 }
 
 void    walletProcess(char  *walletFile, std::map<std::string, double> dataBase) {
+    std::map<std::string, double>::iterator itLow;
     std::string     buffer;
     std::string     date;
     double          value;
@@ -32,11 +33,20 @@ void    walletProcess(char  *walletFile, std::map<std::string, double> dataBase)
             std::istringstream valueStream(buffer);
             std::getline(valueStream, date, '|');
             if (valueStream >> value) {
-                if (value >= 0 && value < std::numeric_limits<int>::max() && dateChecking(date) == 0) {
-                    std::cout << date << " => " << value << " = " << dataBase[date] * value << std::endl;
+                if (value >= 0 && value < std::numeric_limits<int>::max() && isValidDate(date) == 1) {
+                    if (dataBase[date]) {
+                        std::cout << date << " => " << value << " = " << dataBase[date] * value << std::endl;
+                    } else {
+                        itLow = dataBase.lower_bound(date);
+                        itLow--;
+                        if (itLow != dataBase.end())
+                            std::cout << date << " => " << value << " = " << itLow->second << std::endl;
+                        else
+                           std::cout << "Error: bad input: not in dataBase" << std::endl; 
+                    }
                 } else if (value < 0) {
                     std::cout << "Error: not a positive number." << std::endl;
-                } else if (dateChecking(date) > 0) {
+                } else if (isValidDate(date) == 0) {
                     std::cout << "Error: bad input => " << date << std::endl;
                 } else {
                     std::cout << "Error: too large a number." << std::endl;
@@ -48,19 +58,18 @@ void    walletProcess(char  *walletFile, std::map<std::string, double> dataBase)
     }
 }
 
-int dateChecking(const std::string& date) {
-    std::istringstream ss(date);
-    std::tm check = {};
+bool isValidDate(const std::string& dateString) {
+    std::istringstream ss(dateString);
 
-    ss >> std::get_time(&check, "%Y-%m-%d");
-    if (ss.fail()) {
-        return (1);
+    int year, month, day;
+    char dash1, dash2;
+
+    ss >> year >> dash1 >> month >> dash2 >> day;
+    if (ss.fail() || dash1 != '-' || dash2 != '-') {
+        return false;
     }
-
-    std::time_t time = std::mktime(&check);
-    if (time == -1) {
-        return (2);
+    if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31) {
+        return (false);
     }
-
-    return (0);
+    return (true);
 }
