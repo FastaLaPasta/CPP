@@ -46,6 +46,9 @@ std::stack<int> RPN(char  *arg) {
         }
         arg++;
     }
+    // if (rpnStack.size() != 1) {
+    //     std::cout << "wrong number of operator" << std::endl;
+    // }
     //std::cout << rpnStack.top() << std::endl;
     return (rpnStack);
 }

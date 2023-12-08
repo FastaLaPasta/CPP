@@ -8,7 +8,11 @@ int main(int argc, char **argv) {
     try
     {
         std::stack<int> poland = RPN(argv[1]);
-        std::cout << poland.top() << std::endl;
+        if (poland.size() != 1) {
+            std::cout << "wrong number of operator" << std::endl;
+        } else {
+            std::cout << poland.top() << std::endl;
+        }
     }
     catch(const std::exception& e)
     {
